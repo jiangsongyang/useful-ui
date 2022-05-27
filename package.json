@@ -1,0 +1,58 @@
+{
+  "name": "useful-ui",
+  "version": "1.0.0",
+  "description": "a useful components library",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "lint:eslint": "npx eslint . --fix",
+    "lint:prettier": "npx prettier . --write",
+    "lint:stylelint": "stylelint --fix \"**/*.{less,css}\"",
+    "precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm precommit",
+      "commit-msg": "node scripts/commit-msg.mjs"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,vue}": [
+      "pnpm lint:eslint",
+      "pnpm lint:prettier",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangsongyang/useful-ui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangsongyang/useful-ui/issues"
+  },
+  "homepage": "https://github.com/jiangsongyang/useful-ui#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^8.16.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-vue": "^9.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.1",
+    "stylelint": "^14.7.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
+    "lint-staged": "^12.4.2",
+    "prettier": "^2.6.2",
+    "chalk": "^5.0.1",
+    "typescript": "^4.7.2"
+  }
+}

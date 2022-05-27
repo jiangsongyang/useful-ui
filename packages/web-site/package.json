@@ -1,0 +1,22 @@
+{
+  "name": "@useful-ui/web-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "register:components": "vitepress-rc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^0.22.4",
+    "vitepress-theme-demoblock": "^1.4.2"
+  },
+  "dependencies": {
+    "@useful-ui/components": "workspace:^1.0.0"
+  }
+}
