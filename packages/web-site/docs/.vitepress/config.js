@@ -1,7 +1,7 @@
 module.exports = {
-  title: 'Kylin',
-  description: 'Just playing around.',
-  lang: 'en-US',
+  title: 'UsefulUI',
+  description: '一个不太正经的组件库',
+  lang: 'zh-cn',
   themeConfig: {
     // 展示搜索框
     algolia: {
@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         text: 'GitHub',
-        link: 'https://github.com/lxKylin/vitepressdemo'
+        link: 'https://github.com/jiangsongyang/useful-ui'
       }
     ],
     // 侧边栏
@@ -44,7 +44,7 @@ function getDemoSidebar() {
       children: [
         {
           text: '新特性',
-          link: '/components/log/'
+          link: '/log/'
         }
       ]
     },
@@ -58,7 +58,7 @@ function getDemoSidebar() {
     },
     {
       text: '快速开始',
-      link: '/'
+      link: '/quick-start/'
     },
     {
       text: '基础组件',

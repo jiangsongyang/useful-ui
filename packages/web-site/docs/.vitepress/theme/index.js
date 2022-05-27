@@ -1,11 +1,11 @@
 import Theme from 'vitepress/dist/client/theme-default'
-import Button from '@useful-ui/components/src/Button/Button.vue'
+import UsefulUI from '@useful-ui/components'
 import { registerComponents } from './register-components.js'
 
 export default {
   ...Theme,
   enhanceApp({ app }) {
-    app.component('Button', Button)
+    app.use(UsefulUI)
     registerComponents(app)
   }
 }
