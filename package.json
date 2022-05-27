@@ -17,10 +17,10 @@
     }
   },
   "lint-staged": {
-    "*.{ts,vue}": [
+    "packages/**/*.{ts,vue}": [
       "pnpm lint:eslint",
       "pnpm lint:prettier",
-      "git add"
+      "git add ."
     ]
   },
   "repository": {
