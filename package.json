@@ -4,7 +4,7 @@
   "description": "a useful components library",
   "main": "index.js",
   "scripts": {
-    "dev:doc":"pnpm docs:dev --filter @useful-ui/web-site",
+    "dev:doc": "pnpm docs:dev --filter @useful-ui/web-site",
     "prepare": "husky install",
     "lint:eslint": "npx eslint . --fix",
     "lint:prettier": "npx prettier . --write",
@@ -22,6 +22,10 @@
       "pnpm lint:eslint",
       "pnpm lint:prettier",
       "git add ."
+    ],
+    "./packages/**/*.{css,less}": [
+      "pnpm lint:stylelint",
+      "git add ."
     ]
   },
   "repository": {
@@ -38,22 +42,25 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+    "chalk": "^5.0.1",
     "eslint": "^8.16.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-vue": "^9.0.1",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.0.1",
     "husky": "^8.0.1",
+    "lint-staged": "^12.4.2",
+    "prettier": "^2.6.2",
     "stylelint": "^14.7.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^7.0.0",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard": "^25.0.0",
     "stylelint-order": "^5.0.0",
-    "lint-staged": "^12.4.2",
-    "prettier": "^2.6.2",
-    "chalk": "^5.0.1",
     "typescript": "^4.7.2"
+  },
+  "dependencies": {
+   
   }
 }
