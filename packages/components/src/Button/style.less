@@ -1,4 +1,5 @@
 .useful-button {
+  // common
   outline: 0;
   line-height: 1.5;
   position: relative;
@@ -16,6 +17,13 @@
   font-size: @font-size-md;
   border-radius: 2px;
 
+  // block
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  // type
   &.default {
     color: @color-text;
     border-color: @color-dashed;
@@ -50,6 +58,61 @@
       color: @color-primary-hover;
       border-color: @color-primary-hover;
       background: #fff;
+    }
+  }
+
+  &.link {
+    color: @color-primary;
+    border: none;
+    border-color: transparent;
+    background: 0 0;
+    box-shadow: none;
+    &:hover {
+      color: @color-primary-hover;
+      border-color: @color-primary-hover;
+      background: #fff;
+    }
+  }
+
+  &.text {
+    color: @color-text;
+    border: none;
+    border-color: transparent;
+    background: 0 0;
+    box-shadow: none;
+    &:hover {
+      color: @color-primary-hover;
+      border-color: @color-primary-hover;
+      background: #fff;
+    }
+  }
+
+  // size
+  &.small {
+    height: 24px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  &.large {
+    height: 40px;
+    padding: 6.4px 20px;
+    font-size: 16px;
+  }
+
+  // disabled
+  &[disabled] {
+    color: #00000040;
+    background: 0 0;
+    text-shadow: none;
+    box-shadow: none;
+    cursor: not-allowed;
+
+    &:hover {
+      color: #00000040;
+      border-color: #d9d9d9;
+      text-shadow: none;
+      box-shadow: none;
     }
   }
 }
