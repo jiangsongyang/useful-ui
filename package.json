@@ -4,8 +4,8 @@
   "description": "a useful components library",
   "main": "index.js",
   "scripts": {
+    "prepare": "husky install && chmod ug+x .husky/*",
     "dev:doc": "pnpm docs:dev --filter @useful-ui/web-site",
-    "prepare": "husky install",
     "lint:eslint": "npx eslint . --fix",
     "lint:prettier": "npx prettier . --write",
     "lint:stylelint": "stylelint --fix \"**/*.{less,css}\"",
@@ -50,8 +50,11 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.0.1",
     "husky": "^8.0.1",
-    "lint-staged": "^12.4.2",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
+    "postcss": "^8.4.12",
+    "postcss-html": "^1.4.1",
+    "postcss-less": "^6.0.0",
     "stylelint": "^14.7.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^7.0.0",
@@ -60,7 +63,5 @@
     "stylelint-order": "^5.0.0",
     "typescript": "^4.7.2"
   },
-  "dependencies": {
-   
-  }
+  "dependencies": {}
 }
