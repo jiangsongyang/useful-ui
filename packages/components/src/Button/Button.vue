@@ -1,9 +1,13 @@
 <script setup lang="ts">
-  defineProps<{ type: string }>()
+  import { ButtonProps } from './props'
+  defineProps<ButtonProps>()
 </script>
 
 <template>
-  <button>this is btn comp</button>
+  <button :class="`useful-button ${type}`"><slot /></button>
 </template>
 
-<style scoped></style>
+<style lang="less" scoped>
+  @import url('../../global.less');
+  @import url('./style.less');
+</style>

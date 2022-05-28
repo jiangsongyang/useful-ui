@@ -2,14 +2,15 @@
 
 ```vue
 <template>
-  Small
-  <Button type="a" @click="handleClick"></Button>
-  Middle
-  <Button type="a"></Button>
-  Large
-  <Button type="a"></Button>
-  Disabled
-  <Button type="a"></Button>
+  <span style="margin-right:20px">
+    <Button type="primary">primary</Button>
+  </span>
+  <span style="margin-right:20px">
+    <Button type="default">default</Button>
+  </span>
+  <span style="margin-right:20px">
+    <Button type="dashed">dashed</Button>
+  </span>
 </template>
 
 <script setup>
