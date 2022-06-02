@@ -8,3 +8,4 @@ dist
 /public
 .husky
 *.d.ts
+packages/**/assets/*

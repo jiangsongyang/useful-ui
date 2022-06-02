@@ -5,4 +5,4 @@ Icon.install = function (app: App) {
   app.component(Icon.name, Icon)
 }
 
-export const UsefulButton = Icon
+export const UsefulIcon = Icon
