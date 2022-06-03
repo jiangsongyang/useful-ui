@@ -52,7 +52,8 @@ function getDemoSidebar() {
       text: '开发指南',
       children: [
         {
-          text: '安装'
+          text: '安装',
+          link: '/setup/'
         }
       ]
     },
@@ -70,15 +71,17 @@ function getDemoSidebar() {
         {
           text: 'Icon 图标',
           link: '/components/icon/'
-        },
+        }
+      ]
+    },
+    {
+      text: '布局组件',
+      children: [
         {
           text: 'Divider 分割线',
           link: '/components/divider/'
         }
       ]
-    },
-    {
-      text: '布局组件'
     }
   ]
 }
