@@ -17,6 +17,30 @@
   font-size: @font-size-md;
   border-radius: 2px;
 
+  // loading
+
+  &.loading {
+    opacity: 0.65;
+    pointer-events: none;
+    cursor: default;
+    position: relative;
+  }
+
+  .loading-icon {
+    transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &.loading-show {
+      width: 2em;
+      height: 1em;
+      animation: loading-circle 3s infinite linear;
+    }
+
+    &.loading-hide {
+      width: 0;
+    }
+  }
+
   // block
   &.block {
     display: block;
@@ -118,5 +142,11 @@
       text-shadow: none;
       box-shadow: none;
     }
+  }
+}
+
+@keyframes loading-circle {
+  100% {
+    transform: rotate(360deg);
   }
 }

@@ -94,6 +94,37 @@
 
 :::
 
+### 加载中状态
+
+添加 `loading` 属性即可让按钮处于加载状态，最后的按钮演示点击后进入加载状态。
+
+:::demo
+
+```vue
+<template>
+  <span style="margin-right:20px">
+    <u-button type="primary" loading>loading button</u-button>
+  </span>
+  <span style="margin-right:20px">
+    <u-button type="primary" :loading="loading" @click="changeLoading">click me</u-button>
+  </span>
+</template>
+<script setup>
+  import { ref } from 'vue'
+
+  const loading = ref(false)
+
+  const changeLoading = () => {
+    loading.value = true
+    setTimeout(() => {
+      loading.value = false
+    }, 3000)
+  }
+</script>
+```
+
+:::
+
 ### 事件
 
 点击
