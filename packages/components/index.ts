@@ -1,8 +1,9 @@
 import type { App } from 'vue'
 import { UsefulButton } from './src/Button'
 import { UsefulIcon } from './src/Icon'
+import { UsefulDivider } from './src/Divider'
 
-const components = [UsefulButton, UsefulIcon]
+const components = [UsefulButton, UsefulIcon, UsefulDivider]
 
 const install = (app: App) => {
   components.forEach((component) => {
@@ -10,7 +11,7 @@ const install = (app: App) => {
   })
 }
 
-export { install, UsefulButton, UsefulIcon }
+export { install, UsefulButton, UsefulIcon, UsefulDivider }
 
 export default {
   install,

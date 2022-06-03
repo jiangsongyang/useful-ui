@@ -9,8 +9,6 @@
       'u-icon': UsefulIcon
     },
     setup(props) {
-      console.log(props)
-
       // handle class name
       const className = computed(() => {
         const { type, size, block, loading } = props

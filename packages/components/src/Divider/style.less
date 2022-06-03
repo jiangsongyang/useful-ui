@@ -1,0 +1,119 @@
+// common style
+.useful-divider {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #000000d9;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5715;
+  list-style: none;
+  font-feature-settings: 'tnum';
+  border-top: 1px solid rgb(0 0 0 / 6%);
+}
+
+.useful-divider-horizontal {
+  display: flex;
+  clear: both;
+  width: 100%;
+  min-width: 100%;
+  margin: 24px 0;
+}
+
+// dashed
+.dashed {
+  background: 0 0;
+  border-color: #0000000f;
+  border-style: dashed;
+  border-width: 1px 0 0;
+}
+
+// has text
+.with-text {
+  display: flex;
+  margin: 16px 0;
+  color: #000000d9;
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-align: center;
+  border-top: 0;
+  border-top-color: #0000000f;
+
+  .divider-inner-text {
+    display: inline-block;
+    padding: 0 1em;
+  }
+}
+
+.center {
+  &::before {
+    position: relative;
+    top: -1px;
+    width: 73%;
+    border-top: 1px solid transparent;
+    border-top-color: inherit;
+    border-bottom: 0;
+    transform: translateY(50%);
+    content: '';
+  }
+
+  &::after {
+    position: relative;
+    top: -1px;
+    width: 73%;
+    border-top: 1px solid transparent;
+    border-top-color: inherit;
+    border-bottom: 0;
+    transform: translateY(50%);
+    content: '';
+  }
+}
+
+.left {
+  &::before {
+    position: relative;
+    top: 50%;
+    width: 5%;
+    border-top: 1px solid transparent;
+    border-top-color: inherit;
+    border-bottom: 0;
+    transform: translateY(50%);
+    content: '';
+  }
+
+  &::after {
+    position: relative;
+    top: 50%;
+    width: 95%;
+    border-top: 1px solid transparent;
+    border-top-color: inherit;
+    border-bottom: 0;
+    transform: translateY(50%);
+    content: '';
+  }
+}
+
+.right {
+  &::before {
+    position: relative;
+    top: 50%;
+    width: 95%;
+    border-top: 1px solid transparent;
+    border-top-color: inherit;
+    border-bottom: 0;
+    transform: translateY(50%);
+    content: '';
+  }
+
+  &::after {
+    position: relative;
+    top: 50%;
+    width: 5%;
+    border-top: 1px solid transparent;
+    border-top-color: inherit;
+    border-bottom: 0;
+    transform: translateY(50%);
+    content: '';
+  }
+}

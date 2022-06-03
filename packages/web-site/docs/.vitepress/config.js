@@ -70,6 +70,10 @@ function getDemoSidebar() {
         {
           text: 'Icon 图标',
           link: '/components/icon/'
+        },
+        {
+          text: 'Divider 分割线',
+          link: '/components/divider/'
         }
       ]
     },
