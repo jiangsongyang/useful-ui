@@ -4,5 +4,4 @@ node_modules
 coverage
 *.log
 .idea
-packages/**/assets/icon/demo_index.html
-packages/**/assets/icon/demo.css
+packages/**/assets/icon/*
