@@ -5,7 +5,6 @@ export default {
   ...Theme,
   enhanceApp: ({ app }) => {
     import('@useful-ui/components').then((res) => {
-      console.log(res, 'res----')
       app.use(res)
     })
     registerComponents(app)

@@ -1,1 +1,0 @@
-# this is quick start

@@ -3,7 +3,7 @@ home: true
 heroText:
 tagline:
 actionText: 快速开始
-actionLink: /quick-start
+actionLink: /components/button/
 features:
   - title: 可以学习
     details: 但是勿上生产

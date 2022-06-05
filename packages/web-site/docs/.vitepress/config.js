@@ -40,15 +40,6 @@ function getDemoSidebar() {
       text: '介绍'
     },
     {
-      text: '更新日志',
-      children: [
-        {
-          text: '新特性',
-          link: '/log/'
-        }
-      ]
-    },
-    {
       text: '开发指南',
       children: [
         {
@@ -56,10 +47,6 @@ function getDemoSidebar() {
           link: '/setup/'
         }
       ]
-    },
-    {
-      text: '快速开始',
-      link: '/quick-start/'
     },
     {
       text: '基础组件',
