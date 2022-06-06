@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { PropType } from 'vue'
 
 export const props = {
   type: {
@@ -25,5 +25,3 @@ export const props = {
     type: Function as PropType<(event: MouseEvent) => void>
   }
 }
-
-export type ButtonProps = ExtractPropTypes<typeof props>

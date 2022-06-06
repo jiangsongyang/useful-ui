@@ -1,4 +1,4 @@
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { PropType } from 'vue'
 
 export const props = {
   dashed: {
@@ -14,5 +14,3 @@ export const props = {
     default: 0
   }
 }
-
-export type ButtonProps = ExtractPropTypes<typeof props>

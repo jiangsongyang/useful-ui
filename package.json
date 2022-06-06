@@ -4,7 +4,7 @@
   "description": "a useful components library",
   "main": "index.js",
   "scripts": {
-    "prepare": "husky install && chmod ug+x .husky/*",
+    "prepare": "husky install",
     "dev:doc": "pnpm docs:dev --filter @useful-ui/web-site",
     "lint:eslint": "npx eslint . --fix",
     "lint:prettier": "npx prettier . --write",
