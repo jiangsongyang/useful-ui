@@ -1,10 +1,15 @@
 import type { App } from 'vue'
+/** basic */
 import { UsefulButton } from './src/Button'
 import { UsefulIcon } from './src/Icon'
+/** layout */
 import { UsefulDivider } from './src/Divider'
+/** show  */
 import { UsefulCard } from './src/Card'
+/** input */
+import { UsefulInput } from './src/Input'
 
-const components = [UsefulButton, UsefulIcon, UsefulDivider, UsefulCard]
+const components = [UsefulButton, UsefulIcon, UsefulDivider, UsefulCard, UsefulInput]
 
 const install = (app: App) => {
   components.forEach((component) => {
@@ -12,7 +17,7 @@ const install = (app: App) => {
   })
 }
 
-export { install, UsefulButton, UsefulIcon, UsefulDivider, UsefulCard }
+export { install, UsefulButton, UsefulIcon, UsefulDivider, UsefulCard, UsefulInput }
 
 export default {
   install,

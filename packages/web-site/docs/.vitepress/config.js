@@ -49,7 +49,7 @@ function getDemoSidebar() {
       ]
     },
     {
-      text: '基础组件',
+      text: '通用组件',
       children: [
         {
           text: 'Button 按钮',
@@ -67,6 +67,19 @@ function getDemoSidebar() {
         {
           text: 'Divider 分割线',
           link: '/components/divider/'
+        }
+      ]
+    },
+    {
+      text: '导航',
+      children: []
+    },
+    {
+      text: '数据录入',
+      children: [
+        {
+          text: 'Input 输入框',
+          link: '/components/input/'
         }
       ]
     }
