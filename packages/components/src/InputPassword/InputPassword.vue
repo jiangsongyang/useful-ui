@@ -18,7 +18,7 @@
         setFocused()
       }
 
-      const [hidePassword, setHidePassword] = useToggle(false)
+      const [hidePassword, setHidePassword] = useToggle(true)
 
       return {
         nativeAttr,

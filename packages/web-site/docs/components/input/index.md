@@ -64,9 +64,9 @@
 
 #### 属性
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| `placeholder` | placeholder | _string_ | `''` |
-| `prefix` | 在输入框前插入的 icon name | _string_ | `null` |
-| `suffix` | 在输入框后插入的 icon name | _string_ | `null` |
-| `size` | 输入框的大小 | _string_ | `default` |
+| 参数          | 说明                       | 类型     | 默认值    |
+| ------------- | -------------------------- | -------- | --------- |
+| `placeholder` | placeholder                | _string_ | `''`      |
+| `prefix`      | 在输入框前插入的 icon name | _string_ | `null`    |
+| `suffix`      | 在输入框后插入的 icon name | _string_ | `null`    |
+| `size`        | 输入框的大小               | _string_ | `default` |
