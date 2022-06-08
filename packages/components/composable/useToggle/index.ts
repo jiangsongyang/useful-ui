@@ -1,9 +1,12 @@
+import { ref } from 'vue'
 import type { Ref } from 'vue'
 
-export const useToggle = (initialValue: Ref): [Ref, () => void] => {
+export const useToggle = (initialValue: boolean): [Ref, () => void] => {
+  const _v = ref(initialValue)
+
   const toggle = () => {
-    initialValue.value = !initialValue.value
+    _v.value = !_v.value
   }
 
-  return [initialValue, toggle]
+  return [_v, toggle]
 }

@@ -1,4 +1,4 @@
-import type { PropType } from 'vue'
+import type { PropType, ExtractPropTypes } from 'vue'
 
 export const props = {
   placeholder: {
@@ -20,3 +20,4 @@ export const props = {
 }
 
 export type TAllowNativeAttributes = 'placeholder'
+export type TProps = ExtractPropTypes<typeof props>

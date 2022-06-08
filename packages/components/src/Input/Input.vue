@@ -1,43 +1,28 @@
 <script lang="ts">
-  import { ref, computed, defineComponent } from 'vue'
-  import type { InputHTMLAttributes } from 'vue'
+  import { computed, defineComponent } from 'vue'
   import { props } from './props'
-  import type { TAllowNativeAttributes } from './props'
+
+  import { useToggle } from '../../composable'
+  import { useNativeAttr } from './use'
   export default defineComponent({
     name: 'u-input',
     props,
     setup(props) {
-      console.log(props, 'props')
-
       const size = computed(() => props.size)
 
       // handle class name
       const prefix = computed(() => props.prefix)
       const suffix = computed(() => props.suffix)
 
-      const allowNativeAttrs: TAllowNativeAttributes[] = ['placeholder']
+      const nativeAttr = useNativeAttr(props)
 
-      const nativeAttr = computed(() => {
-        const attrs: Pick<InputHTMLAttributes, 'placeholder'> = {}
-        allowNativeAttrs.forEach((key: TAllowNativeAttributes) => {
-          if (props[key]) {
-            attrs[key] = props[key]
-          }
-        })
-        return attrs
-      })
-
-      const focused = ref<Boolean>(false)
-
-      const setFocused = (value: Boolean) => {
-        focused.value = value
-      }
+      const [focused, setFocused] = useToggle(false)
 
       const handleFocus = () => {
-        setFocused(true)
+        setFocused()
       }
       const handleBlur = () => {
-        setFocused(false)
+        setFocused()
       }
 
       return {

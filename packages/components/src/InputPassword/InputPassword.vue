@@ -1,42 +1,24 @@
 <script lang="ts">
-  import { ref, defineComponent, computed } from 'vue'
-  import type { InputHTMLAttributes } from 'vue'
+  import { defineComponent } from 'vue'
   import { props } from '../Input/props'
-  import type { TAllowNativeAttributes } from '../Input/props'
+  import { useToggle } from '../../composable'
+  import { useNativeAttr } from '../Input/use'
   export default defineComponent({
     name: 'u-input-password',
     props,
     setup(props) {
-      const allowNativeAttrs: TAllowNativeAttributes[] = ['placeholder']
+      const nativeAttr = useNativeAttr(props)
 
-      const nativeAttr = computed(() => {
-        const attrs: Pick<InputHTMLAttributes, 'placeholder'> = {}
-        allowNativeAttrs.forEach((key: TAllowNativeAttributes) => {
-          if (props[key]) {
-            attrs[key] = props[key]
-          }
-        })
-        return attrs
-      })
-
-      const focused = ref<Boolean>(false)
-
-      const setFocused = (value: Boolean) => {
-        focused.value = value
-      }
+      const [focused, setFocused] = useToggle(false)
 
       const handleFocus = () => {
-        setFocused(true)
+        setFocused()
       }
       const handleBlur = () => {
-        setFocused(false)
+        setFocused()
       }
 
-      const hidePassword = ref<Boolean>(true)
-
-      const setHidePassword = () => {
-        hidePassword.value = !hidePassword.value
-      }
+      const [hidePassword, setHidePassword] = useToggle(false)
 
       return {
         nativeAttr,
