@@ -66,12 +66,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| `dashed` | 是否虚线 | _boolean_ | `false` |
-| `orientation` | 分割线标题的位置 | `'left \| right \| center'` | `center` |
-| `orientationMargin` | 标题和最近 `left/right` 边框之间的距离，去除了分割线，同时 `orientation` 必须为 `left` 或 `right` | _number_ | `0` |
-
-#### 插槽
-
-| 插槽名    | 说明     | 参数 |
-| --------- | -------- | ---- |
-| `default` | 文本内容 | `-`  |
+| `placeholder` | placeholder | _string_ | `''` |
+| `prefix` | 在输入框前插入的 icon name | _string_ | `null` |
+| `suffix` | 在输入框后插入的 icon name | _string_ | `null` |
+| `size` | 输入框的大小 | _string_ | `default` |
