@@ -20,13 +20,13 @@
 
 ```vue
 <template>
-  <u-input size="large" placeholder="large size" prefix="smile" />
+  <u-input size="large" placeholder="large size" prefix="code" suffix="check-circle" />
   <br />
   <br />
-  <u-input placeholder="default size" prefix="smile" />
+  <u-input placeholder="default size" prefix="code" suffix="check-circle" />
   <br />
   <br />
-  <u-input size="small" placeholder="large size" prefix="smile" />
+  <u-input size="small" placeholder="large size" prefix="code" suffix="check-circle" />
 </template>
 ```
 

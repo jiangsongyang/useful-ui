@@ -3,6 +3,8 @@ module.exports = {
   plugins: ['stylelint-order'],
   extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
   rules: {
+    'declaration-block-no-duplicate-properties': null,
+    'no-duplicate-selectors': null,
     'function-no-unknown': null,
     'selector-class-pattern': null,
     'selector-pseudo-class-no-unknown': [

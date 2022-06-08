@@ -26,8 +26,64 @@
 
   &:focus {
     border-color: @color-primary-hover;
-    box-shadow: 0 0 0 2px @color-primary-hover;
+    box-shadow: 0 0 0 2px @color-primary-focus-outline;
     border-right-width: 1px;
     outline: 0;
+  }
+}
+
+//
+.useful-input-affix-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  min-width: 0;
+  padding: 4px 11px;
+  color: #000000d9;
+  font-size: 14px;
+  line-height: 1.5715;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: inline-flex;
+
+  &.useful-input-affix-wrapper-focus {
+    border-color: @color-primary-hover;
+    box-shadow: 0 0 0 2px @color-primary-focus-outline;
+    border-right-width: 1px;
+  }
+
+  &:hover {
+    border-color: @color-primary-hover;
+    border-right-width: 1px;
+  }
+
+  .useful-input-prefix,
+  .useful-input-prefix {
+    display: flex;
+    flex: none;
+    align-items: center;
+  }
+
+  .useful-input-prefix {
+    margin-right: 4px;
+  }
+
+  .useful-input {
+    padding: 0;
+    border: none;
+    outline: none;
+
+    &:hover {
+      border: none !important;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+      border-right-width: 1px;
+      outline: 0;
+    }
   }
 }
