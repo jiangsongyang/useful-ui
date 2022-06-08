@@ -1,4 +1,4 @@
-// import type { PropType } from 'vue'
+import type { PropType } from 'vue'
 
 export const props = {
   placeholder: {
@@ -12,6 +12,10 @@ export const props = {
   suffix: {
     type: String,
     default: null
+  },
+  size: {
+    type: String as PropType<'large' | 'default' | 'small'>,
+    default: 'default'
   }
 }
 

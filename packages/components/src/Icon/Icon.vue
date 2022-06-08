@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { defineComponent } from 'vue'
+  import { defineComponent, computed } from 'vue'
   import { props } from './props'
   import '../../assets/icon/iconfont.js'
   export default defineComponent({
     name: 'u-icon',
     props,
     setup(props) {
+      const type = computed(() => props.type)
       return {
-        type: props.type
+        type
       }
     }
   })

@@ -1,4 +1,3 @@
-import type { App } from 'vue'
 /** basic */
 import { UsefulButton } from './src/Button'
 import { UsefulIcon } from './src/Icon'
@@ -8,8 +7,22 @@ import { UsefulDivider } from './src/Divider'
 import { UsefulCard } from './src/Card'
 /** input */
 import { UsefulInput } from './src/Input'
+import { UsefulInputPassword } from './src/InputPassword'
+/** type */
+import type { App } from 'vue'
 
-const components = [UsefulButton, UsefulIcon, UsefulDivider, UsefulCard, UsefulInput]
+const components = [
+  /** basic */
+  UsefulButton,
+  UsefulIcon,
+  /** layout */
+  UsefulDivider,
+  /** show  */
+  UsefulCard,
+  /** input */
+  UsefulInput,
+  UsefulInputPassword
+]
 
 const install = (app: App) => {
   components.forEach((component) => {
@@ -17,7 +30,15 @@ const install = (app: App) => {
   })
 }
 
-export { install, UsefulButton, UsefulIcon, UsefulDivider, UsefulCard, UsefulInput }
+export {
+  install,
+  UsefulButton,
+  UsefulIcon,
+  UsefulDivider,
+  UsefulCard,
+  UsefulInput,
+  UsefulInputPassword
+}
 
 export default {
   install,

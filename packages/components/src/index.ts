@@ -7,3 +7,4 @@ export { UsefulDivider } from './Divider'
 
 /** input */
 export { UsefulInput } from './Input'
+export { UsefulInputPassword } from './InputPassword'

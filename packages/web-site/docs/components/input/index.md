@@ -12,6 +12,20 @@
 
 :::
 
+### 前缀和后缀
+
+在输入框上添加前缀或后缀图标。
+
+:::demo
+
+```vue
+<template>
+  <u-input prefix="code" suffix="check-circle" placeholder="input some thing" />
+</template>
+```
+
+:::
+
 ### 三种大小
 
 我们为 `<Input />` 输入框定义了三种尺寸（大、默认、小），高度分别为 `40px`、`32px` 和 `24px`。
@@ -20,13 +34,27 @@
 
 ```vue
 <template>
-  <u-input size="large" placeholder="large size" prefix="code" suffix="check-circle" />
+  <u-input size="large" placeholder="large size" />
   <br />
   <br />
-  <u-input placeholder="default size" prefix="code" suffix="check-circle" />
+  <u-input placeholder="default size" />
   <br />
   <br />
-  <u-input size="small" placeholder="large size" prefix="code" suffix="check-circle" />
+  <u-input size="small" placeholder="small size" />
+</template>
+```
+
+:::
+
+### 密码框
+
+密码框。
+
+:::demo
+
+```vue
+<template>
+  <u-input-password placeholder="input password" />
 </template>
 ```
 
