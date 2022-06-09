@@ -17,7 +17,7 @@
 
       const nativeAttr = useNativeAttr(props)
 
-      const { focused, handleFocus, handleBlur } = useFocus(props)
+      const { focused, handleFocus, handleBlur } = useFocus()
 
       return {
         modelValue,
