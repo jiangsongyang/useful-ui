@@ -3,7 +3,7 @@
   import { props } from './props'
 
   import { useToggle } from '../../composable'
-  import { useNativeAttr } from './use'
+  import { useFix, useNativeAttr } from './use'
   export default defineComponent({
     name: 'u-input',
     props,
@@ -18,9 +18,8 @@
 
       const size = computed(() => props.size)
 
-      // handle class name
-      const prefix = computed(() => props.prefix)
-      const suffix = computed(() => props.suffix)
+      // handle prefix and suffix
+      const { prefix, suffix } = useFix(props)
 
       const nativeAttr = useNativeAttr(props)
 
