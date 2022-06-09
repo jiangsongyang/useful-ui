@@ -6,8 +6,15 @@
 
 ```vue
 <template>
-  <u-input placeholder="Basic usage" />
+  <u-input v-model:value="value" placeholder="Basic usage" />
 </template>
+<script setup>
+  import { ref, watch } from 'vue'
+  const value = ref('')
+  watch(value, (val) => {
+    console.log(val)
+  })
+</script>
 ```
 
 :::
