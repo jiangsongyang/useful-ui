@@ -1,20 +1,16 @@
 <script lang="ts">
-  import { computed, defineComponent } from 'vue'
+  import { defineComponent } from 'vue'
   import { props } from './props'
 
   import { useToggle } from '../../composable'
   import { useFix, useNativeAttr, useSize } from './use'
+  import { useModel } from './use/useModel'
   export default defineComponent({
     name: 'u-input',
     props,
     emits: ['update:modelValue'],
     setup(props, { emit }) {
-      const modelValue = computed(() => props.modelValue)
-
-      const updateVal = (e: Event) => {
-        const targetVal = (e.target as HTMLInputElement).value
-        emit('update:modelValue', targetVal)
-      }
+      const { modelValue, updateVal } = useModel(props, emit)
 
       const { size } = useSize(props)
 
