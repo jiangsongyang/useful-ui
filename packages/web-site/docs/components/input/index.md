@@ -6,8 +6,24 @@
 
 ```vue
 <template>
-  <u-input placeholder="Basic usage" />
+  <u-input placeholder="Basic usage" v-model:value="value" />
 </template>
+<script lang="ts">
+  import { defineComponent, ref, watch } from 'vue'
+  export default defineComponent({
+    setup() {
+      const value = ref<string>('')
+
+      watch(value, (current, before) => {
+        console.log('current value is :', current)
+      })
+
+      return {
+        value
+      }
+    }
+  })
+</script>
 ```
 
 :::

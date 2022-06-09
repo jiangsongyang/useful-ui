@@ -1,6 +1,9 @@
 import type { PropType, ExtractPropTypes } from 'vue'
 
 export const props = {
+  value: {
+    type: String
+  },
   placeholder: {
     type: String,
     default: ''
@@ -16,6 +19,10 @@ export const props = {
   size: {
     type: String as PropType<'large' | 'default' | 'small'>,
     default: 'default'
+  },
+  onInput: {
+    type: Function as PropType<(value: string) => void>,
+    default: undefined
   }
 }
 

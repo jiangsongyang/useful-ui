@@ -7,8 +7,16 @@
   export default defineComponent({
     name: 'u-input',
     props,
-    setup(props) {
+    emits: ['update:value'],
+    setup(props, { emit }) {
       const size = computed(() => props.size)
+
+      const newValue = computed({
+        get: () => props.value,
+        set: (nv) => {
+          emit('update:value', nv)
+        }
+      })
 
       // handle class name
       const prefix = computed(() => props.prefix)
@@ -26,6 +34,8 @@
       }
 
       return {
+        newValue,
+
         nativeAttr,
         prefix,
         suffix,
@@ -53,6 +63,7 @@
       </div>
       <input
         :class="`useful-input ${size !== 'default' ? size : ''}`"
+        v-model="newValue"
         v-bind="nativeAttr"
         @focus="handleFocus"
         @blur="handleBlur"
@@ -64,7 +75,11 @@
   </template>
   <!-- basic -->
   <template v-else>
-    <input :class="`useful-input ${size !== 'default' ? size : ''}`" v-bind="nativeAttr" />
+    <input
+      :class="`useful-input ${size !== 'default' ? size : ''}`"
+      v-model="newValue"
+      v-bind="nativeAttr"
+    />
   </template>
 </template>
 
