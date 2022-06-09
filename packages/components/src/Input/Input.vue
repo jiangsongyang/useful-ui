@@ -3,7 +3,7 @@
   import { props } from './props'
 
   import { useToggle } from '../../composable'
-  import { useFix, useNativeAttr } from './use'
+  import { useFix, useNativeAttr, useSize } from './use'
   export default defineComponent({
     name: 'u-input',
     props,
@@ -16,7 +16,7 @@
         emit('update:modelValue', targetVal)
       }
 
-      const size = computed(() => props.size)
+      const { size } = useSize(props)
 
       // handle prefix and suffix
       const { prefix, suffix } = useFix(props)
