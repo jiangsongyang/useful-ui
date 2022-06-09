@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <u-input v-model:value="value" placeholder="Basic usage" />
+  <u-input v-model="value" placeholder="Basic usage" />
 </template>
 <script setup>
   import { ref, watch } from 'vue'

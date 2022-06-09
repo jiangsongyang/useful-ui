@@ -7,12 +7,13 @@
   export default defineComponent({
     name: 'u-input',
     props,
-    emits: ['update:value'],
+    emits: ['update:modelValue'],
     setup(props, { emit }) {
-      const value = computed(() => props.value)
+      const modelValue = computed(() => props.modelValue)
+
       const updateVal = (e: Event) => {
         const targetVal = (e.target as HTMLInputElement).value
-        emit('update:value', targetVal)
+        emit('update:modelValue', targetVal)
       }
 
       const size = computed(() => props.size)
@@ -33,7 +34,7 @@
       }
 
       return {
-        value,
+        modelValue,
         updateVal,
 
         nativeAttr,
@@ -63,7 +64,7 @@
       </div>
       <input
         :class="`useful-input ${size !== 'default' ? size : ''}`"
-        :value="value"
+        :value="modelValue"
         v-bind="nativeAttr"
         @focus="handleFocus"
         @blur="handleBlur"
@@ -78,7 +79,7 @@
   <template v-else>
     <input
       :class="`useful-input ${size !== 'default' ? size : ''}`"
-      :value="value"
+      :value="modelValue"
       v-bind="nativeAttr"
       @input="updateVal"
     />
