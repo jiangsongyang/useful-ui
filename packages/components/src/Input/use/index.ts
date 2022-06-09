@@ -1,3 +1,5 @@
 export * from './useNativeAttr'
 export * from './useFix'
 export * from './useSize'
+export * from './useModel'
+export * from './useFocus'

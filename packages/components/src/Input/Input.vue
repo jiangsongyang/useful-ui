@@ -2,9 +2,7 @@
   import { defineComponent } from 'vue'
   import { props } from './props'
 
-  import { useToggle } from '../../composable'
-  import { useFix, useNativeAttr, useSize } from './use'
-  import { useModel } from './use/useModel'
+  import { useFix, useNativeAttr, useSize, useModel, useFocus } from './use'
   export default defineComponent({
     name: 'u-input',
     props,
@@ -19,14 +17,7 @@
 
       const nativeAttr = useNativeAttr(props)
 
-      const [focused, setFocused] = useToggle(false)
-
-      const handleFocus = () => {
-        setFocused()
-      }
-      const handleBlur = () => {
-        setFocused()
-      }
+      const { focused, handleFocus, handleBlur } = useFocus(props)
 
       return {
         modelValue,
