@@ -6,8 +6,6 @@
     name: 'u-space',
     props,
     setup(props) {
-      console.log(props, 'props')
-
       const children = (useSlots() as any).default()
 
       const className = computed(() => {
