@@ -3,6 +3,7 @@ import { UsefulButton } from './src/Button'
 import { UsefulIcon } from './src/Icon'
 /** layout */
 import { UsefulDivider } from './src/Divider'
+import { UsefulSpace } from './src/Space'
 /** show  */
 import { UsefulCard } from './src/Card'
 /** input */
@@ -17,6 +18,7 @@ const components = [
   UsefulIcon,
   /** layout */
   UsefulDivider,
+  UsefulSpace,
   /** show  */
   UsefulCard,
   /** input */
@@ -35,6 +37,7 @@ export {
   UsefulButton,
   UsefulIcon,
   UsefulDivider,
+  UsefulSpace,
   UsefulCard,
   UsefulInput,
   UsefulInputPassword
