@@ -1,0 +1,36 @@
+.useful-space {
+  display: inline-flex;
+
+  // common
+  &.useful-space-align-center {
+    align-items: center;
+  }
+
+  // horizontal
+  &.useful-space-horizontal {
+    .useful-space-item {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // vertical
+  &.useful-space-vertical {
+    width: 100%;
+    flex-direction: column;
+
+    .useful-space-item {
+      width: 100%;
+      margin-bottom: 10px;
+      margin-right: 0;
+
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

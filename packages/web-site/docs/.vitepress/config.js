@@ -67,6 +67,10 @@ function getDemoSidebar() {
         {
           text: 'Divider 分割线',
           link: '/components/divider/'
+        },
+        {
+          text: 'Space 间距',
+          link: '/components/space/'
         }
       ]
     },
