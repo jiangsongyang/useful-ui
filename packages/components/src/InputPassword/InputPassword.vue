@@ -2,25 +2,23 @@
   import { defineComponent } from 'vue'
   import { props } from '../Input/props'
   import { useToggle } from '../../composable'
-  import { useNativeAttr } from '../Input/use'
+  import { useNativeAttr, useFocus, useModel } from '../Input/use'
   export default defineComponent({
     name: 'u-input-password',
     props,
-    setup(props) {
+    setup(props, { emit }) {
       const nativeAttr = useNativeAttr(props)
 
-      const [focused, setFocused] = useToggle(false)
+      const { modelValue, updateVal } = useModel(props, emit)
 
-      const handleFocus = () => {
-        setFocused()
-      }
-      const handleBlur = () => {
-        setFocused()
-      }
+      const { focused, handleFocus, handleBlur } = useFocus()
 
       const [hidePassword, setHidePassword] = useToggle(true)
 
       return {
+        modelValue,
+        updateVal,
+
         nativeAttr,
 
         /** */
@@ -42,8 +40,10 @@
   <div :class="`useful-input-affix-wrapper ${focused && 'useful-input-affix-wrapper-focus'}`">
     <input
       :class="`useful-input ${size !== 'default' ? size : ''}`"
-      v-bind="nativeAttr"
+      :value="modelValue"
       :type="`${hidePassword ? 'password' : 'text'}`"
+      v-bind="nativeAttr"
+      @input="updateVal"
       @focus="handleFocus"
       @blur="handleBlur"
     />

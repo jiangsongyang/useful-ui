@@ -6,22 +6,13 @@
 
 ```vue
 <template>
-  <u-input placeholder="Basic usage" v-model:value="value" />
+  <u-input v-model="value" placeholder="Basic usage" />
 </template>
-<script lang="ts">
-  import { defineComponent, ref, watch } from 'vue'
-  export default defineComponent({
-    setup() {
-      const value = ref<string>('')
-
-      watch(value, (current, before) => {
-        console.log('current value is :', current)
-      })
-
-      return {
-        value
-      }
-    }
+<script setup>
+  import { ref, watch } from 'vue'
+  const value = ref('')
+  watch(value, (val) => {
+    console.log(val)
   })
 </script>
 ```

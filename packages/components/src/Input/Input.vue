@@ -1,40 +1,27 @@
 <script lang="ts">
-  import { computed, defineComponent } from 'vue'
+  import { defineComponent } from 'vue'
   import { props } from './props'
 
-  import { useToggle } from '../../composable'
-  import { useNativeAttr } from './use'
+  import { useFix, useNativeAttr, useSize, useModel, useFocus } from './use'
   export default defineComponent({
     name: 'u-input',
     props,
-    emits: ['update:value'],
+    emits: ['update:modelValue'],
     setup(props, { emit }) {
-      const size = computed(() => props.size)
+      const { modelValue, updateVal } = useModel(props, emit)
 
-      const newValue = computed({
-        get: () => props.value,
-        set: (nv) => {
-          emit('update:value', nv)
-        }
-      })
+      const { size } = useSize(props)
 
-      // handle class name
-      const prefix = computed(() => props.prefix)
-      const suffix = computed(() => props.suffix)
+      // handle prefix and suffix
+      const { prefix, suffix } = useFix(props)
 
       const nativeAttr = useNativeAttr(props)
 
-      const [focused, setFocused] = useToggle(false)
-
-      const handleFocus = () => {
-        setFocused()
-      }
-      const handleBlur = () => {
-        setFocused()
-      }
+      const { focused, handleFocus, handleBlur } = useFocus()
 
       return {
-        newValue,
+        modelValue,
+        updateVal,
 
         nativeAttr,
         prefix,
@@ -63,10 +50,11 @@
       </div>
       <input
         :class="`useful-input ${size !== 'default' ? size : ''}`"
-        v-model="newValue"
+        :value="modelValue"
         v-bind="nativeAttr"
         @focus="handleFocus"
         @blur="handleBlur"
+        @input="updateVal"
       />
       <div class="useful-input-suffix" v-if="suffix">
         <u-icon :type="suffix" />
@@ -77,8 +65,9 @@
   <template v-else>
     <input
       :class="`useful-input ${size !== 'default' ? size : ''}`"
-      v-model="newValue"
+      :value="modelValue"
       v-bind="nativeAttr"
+      @input="updateVal"
     />
   </template>
 </template>
